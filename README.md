@@ -1,54 +1,33 @@
-<<<<<<< HEAD
-# TaleVault-Frontend
-=======
-# Project Công nghệ và Dịch vụ Web (CT313H)
+## TaleVault-Frontend
+### Overview 
+A web-based project is built to manage and display a diverse collection of stories, offering users an intuitive and immersive platform to explore, organize, and enjoy various narrative content.
 
-#### Frontend
+### Team Members
+- Hồ Minh Nhựt (Kaito)
+- Nguyễn Thị Diễm My (Minhify)
 
-Học kỳ 1, Năm học 2023-2024
-
-**MSSV 1** : B2005889
-
-**Họ tên SV 1**: Hồ Minh Nhựt
-
-**MSSV 2**: B2005843
-
-**Họ tên SV 2**: Nguyễn Duy Khang
-
-**Lớp học phần**: M02
-
-**Tên dự án**: Quản lý truyện
-
-## Recommended IDE Setup
-
+### Recommended IDE Setup
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Customize configuration
-
+### Customize configuration
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
-
 ```sh
 npm install
-```
 npm i vee-validate yup 
-
+```
 ### Compile and Hot-Reload for Development
 
 ```sh
 npm run dev
 ```
-
 ### Compile and Minify for Production
-
 ```sh
 npm run build
 ```
-
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
->>>>>>> kaito
