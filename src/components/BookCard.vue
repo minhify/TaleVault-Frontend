@@ -29,7 +29,7 @@ const goToEdit =  () => {
 <template>
     <div class="book-card">
         <div class="row">
-            <div class="col-sm-3 a" align="center" v-for="(book, index) in props.books" :key="index">
+            <div class="col-sm-2 a" align="center" v-for="(book, index) in props.books" :key="index">
                 <RouterLink :to="{ name: 'bookdetail', params: { id: book.id } }">
                     <div class="mt-2">
                         <div class="bookcard">
@@ -77,14 +77,14 @@ const goToEdit =  () => {
 }
 
 .bookcard {
-    background-color: rgb(116, 116, 116);
+    background-color: rgb(248, 246, 246);
     border-radius: 5px;
     margin-bottom: 10px;
-    height: 340px;
+    height: 420px;
     width: 250px;
 }
 .bookcard:hover {
-  background-color: #ec9292; /* Change the background color on hover */
+  background-color: rgb(221, 13, 13); /* Change the background color on hover */
   transform: scale(1.05); /* Scale up the element on hover (optional) */
   transition: background-color 0.3s, transform 0.3s; /* Add a smooth transition effect */
   border-radius: 5px;
@@ -100,8 +100,8 @@ const goToEdit =  () => {
 
 /* Define a fixed width and height for the images */
 .book-image {
-    width: 200px;
-    height: 250px;
+    width: 250px;
+    height: 360px;
     padding: 5px;
 }
 

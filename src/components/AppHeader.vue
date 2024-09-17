@@ -46,26 +46,22 @@ function logout() {
 
 }
 
-
-
-
 </script>
-
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg  navbar-header ">
         <div class="container-fluid">
-            <a class="navbar-brand text-success" href="/"> BOOK COLLECTION</a>
+            <a class="navbar-brand navbar-home" href="/">WIBU COLLECTION</a>
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-catogory dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             Category
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu dropdown-menu-light">
                             <span v-if = "typeLoading">...</span>
                             <span v-else-if="typeIsError">Error</span>
-                            <li v-else-if="typeData.length>0" v-for="(type, index) in typeData" :key="index" class="dropdown-item">
-                                <router-link :to="{ name: 'bookcollectionbytype', params: { id: type.type_id } }" class="dropdown-item">
+                                <li :class="['dropdown-item', 'category-item']" v-else-if="typeData.length>0" v-for="(type, index) in typeData" :key="index" class="dropdown-item">
+                                <router-link   :to="{ name: 'bookcollectionbytype', params: { id: type.type_id } }" class="dropdown-item">
                                         {{ type.name }}
                                 </router-link>
                                 <!-- {{ type.name }} -->
@@ -105,6 +101,27 @@ function logout() {
 </template>
 
 <style scoped>
+.navbar-header {
+    background:  rgb(180, 8, 8);
+}
+
+.navbar-home{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: aliceblue;
+    padding: 0 50px 0 50px;
+}
+
+.btn-catogory{
+    width: 160px;
+    background-color: #fff;
+    border: none;
+}
+
+.dropdown-item:hover {
+    background: #ce2323;
+}
+
 .username {
     float: right;
     padding: 10px;

@@ -47,9 +47,6 @@ function makeBookService() {
         }).then((res) => res.json());
     }
 
-
-
-
     return {
         getBooks,
         getBook,

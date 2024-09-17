@@ -122,6 +122,6 @@ export default {
 
 <style scoped>
 .bookcollection {
-   background-color: rgb(77, 74, 74);
+   background-color: rgb(255, 255, 255);
 }
 </style>
