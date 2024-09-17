@@ -46,19 +46,15 @@ function logout() {
 
 }
 
-
-
-
 </script>
-
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg  navbar-header ">
         <div class="container-fluid">
-            <a class="navbar-brand text-success" href="/"> BOOK COLLECTION</a>
+            <a class="navbar-brand navbar-home" href="/"> WIBU COLLECTION</a>
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-catogory dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             Category
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark">
@@ -105,6 +101,23 @@ function logout() {
 </template>
 
 <style scoped>
+.navbar-header {
+    background:  rgb(180, 8, 8);
+}
+
+.navbar-home{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: aliceblue;
+    padding-left: 50px;
+}
+
+.btn-catogory{
+    margin-left: 40px;
+    background-color: #fff;
+    border: none;
+}
+
 .username {
     float: right;
     padding: 10px;

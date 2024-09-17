@@ -11,7 +11,7 @@ import "bootstrap"
 </template>
 <style scoped>
 .MainPageContainer {
-  background-color: rgb(77, 74, 74);
+  background-color: rgb(255, 255, 255);
   height: 200vh;
 }
 </style>
