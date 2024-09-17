@@ -29,7 +29,7 @@ const goToEdit =  () => {
 <template>
     <div class="book-card">
         <div class="row">
-            <div class="col-sm-3 a" align="center" v-for="(book, index) in props.books" :key="index">
+            <div class="col-sm-2 a" align="center" v-for="(book, index) in props.books" :key="index">
                 <RouterLink :to="{ name: 'bookdetail', params: { id: book.id } }">
                     <div class="mt-2">
                         <div class="bookcard">
