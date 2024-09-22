@@ -5,7 +5,7 @@ function makeBookService() {
     }
 
     async function getBooks(searchtext, page, id) {
-        const limit = 8
+        const limit = 18
         let url = `${baseUrl}?name=${searchtext}&page=${page}&limit=${limit}&typeid=${id}`;
         if(searchtext!="") {
             url = `${baseUrl}?name=${searchtext}&typeid=${id}`;
