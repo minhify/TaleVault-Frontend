@@ -43,14 +43,13 @@ const loggoutMutation = useMutation(
 );
 function logout() {
     loggoutMutation.mutate();
-
 }
 
 </script>
 <template>
     <nav class="navbar navbar-expand-lg  navbar-header ">
         <div class="container-fluid">
-            <a class="navbar-brand navbar-home" href="/">WIBU COLLECTION</a>
+            <a class="navbar-brand navbar-home" href="/">WEEABU COLLECTION</a>
             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
