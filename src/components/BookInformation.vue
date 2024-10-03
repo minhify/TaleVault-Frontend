@@ -7,7 +7,7 @@
                 </div>
             </div>
 
-            <div class="col-md-8">
+            <div class="col-md-8 bg-detail">
                 <div class="book-info text-left"> <!-- Left-align the text -->
                     <h1 class="book-name" align="center">{{ selectedBook.name }}</h1> <!-- Increase the text size -->
                     <p class="author"><i class="fa-solid fa-table-list"></i><strong> Type:</strong> {{ data }}</p>
@@ -65,7 +65,7 @@ const { data } = useQuery({
 .container {
     justify-content: center;
     margin-top: 50px;
-    background-color: rgb(116, 116, 116);
+    background-color: rgb(242, 184, 184);
     border-radius: 5px;
     padding: 5px;
 }
