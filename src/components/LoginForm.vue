@@ -1,6 +1,6 @@
 <template>
     <div class="login-form mt-2">
-        <h2>Login</h2>
+        <h2 class="login-header" >Login</h2>
         <Form @submit="login" :validation-schema="loginFormSchema">
             <div class="form-group">
                 <!-- <label for="username">Username:</label> -->
@@ -45,6 +45,10 @@ function login(){
 </script>
 
 <style scoped>
+.login-header {
+    text-align: center;
+    padding-bottom: 15px;
+}
 
 .formtitle {
     color: white;
@@ -55,7 +59,7 @@ function login(){
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: rgb(116, 116, 116);
+    background-color: rgb(234, 234, 234);
     
 }
 
@@ -86,4 +90,9 @@ button {
     cursor: pointer;
     font-weight: bold;
 }
+
+.btn {
+    background: #057d35;
+}
+
 </style>

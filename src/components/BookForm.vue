@@ -11,12 +11,9 @@ const bookFormSchema = yup.object().shape({
     name: yup.string().required('Book name is require'),
     author: yup.string().required('Book author is require'),
     abstract: yup.string().required('Book content is require'),
-    // image: yup.mixed().test('fileNotEmpty', 'Image is required', (value) => {
-    //     return value instanceof File;}),
 })
 
 const message = ref('');
-
 const props = defineProps({
     book: {
         type: Object,
@@ -30,21 +27,14 @@ const props = defineProps({
 console.log(props.book)
 
 const editedBook = ref({ ...props.book });
-
 const $emit = defineEmits(['submit:book', 'delete:book']);
-
 
 function deleteBook() {
     if (confirm('Are you sure you want to delete this book?')) {
         $emit('delete:book', editedBook.value.id);
-
     }
-
 }
 
-// function updateBook() {
-//     $emit('submit:book', editedBook.value);
-// }
 function addBook() {
     if (!file) fileError.value = 'Image is empty';
     if (!fileError.value) {
@@ -68,9 +58,11 @@ function uploadFile(e) {
     }
     else {
         console.log("valid image type")
-
     }
+}
 
+function goBack() {
+    window.history.back(); // Quay lại trang trước
 }
 </script>
 
@@ -107,9 +99,10 @@ function uploadFile(e) {
             <span :class="{ 'd-block': fileError, 'd-none': !fileError }">{{ fileError }}</span> <br>
         </div>
         <!--  -->
-        <div class="form-group">
-            <button class="btn btn-primary m-2" @click="addBook"><i class="fas fa-save"></i> Save</button>
-            <button v-if="props.book.id" type="button" class="ml-2 btn btn-danger" @click="deleteBook">
+        <div class="form-group btn-group">
+            <button class="btn btn-save" @click="addBook"><i class="fas fa-save"></i> Save</button>
+            <button class="btn btn-cancel" @click="goBack">Cancel</button>
+            <button v-if="props.book.id" type="button" class="ml-2 btn btn-delete btn-danger" @click="deleteBook">
                 <i class="fas fa-trash"></i> Delete
             </button>
         </div>
@@ -120,5 +113,21 @@ function uploadFile(e) {
 <style scoped>
 .form-group {
     margin-top: 5px;
+}
+
+.btn-save, .btn-cancel, .btn-delete {
+    background: rgb(180, 8, 8);
+    color: #fff;
+    margin: -30px 0 10px 0;
+}
+
+.btn-cancel {
+    background: #fff;
+    color: rgb(180, 8, 8);
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px; /* Khoảng cách giữa các nút */
 }
 </style>

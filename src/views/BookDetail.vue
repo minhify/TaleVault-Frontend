@@ -26,7 +26,6 @@ const { isLoading, isError, data, error, refetch } = useQuery({
         }
     },
 });
-
 </script>
 
 <template>
@@ -39,8 +38,6 @@ const { isLoading, isError, data, error, refetch } = useQuery({
         <BookInformation v-else :selectedBook="data" />
     </div>
 </template>
-
-
 
 <style scoped>
 .BookDetailPage {

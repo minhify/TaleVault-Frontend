@@ -84,13 +84,13 @@ function logout() {
             <span v-if="isLoading">Loading...</span>
             <span v-else-if="isError">{{ error.message }}</span>
             <div class="username" v-else-if="data.user">
-                {{ data.user.username }}
-                <button class="btn btn-danger" @click="logout">Logout</button>
+                <span class="user-name">{{ data.user.username }}</span>
+                <button class="btn btn-logout btn-danger" @click="logout">Logout</button>
             </div>
             <div v-else>
                 <!-- login -->
                 <router-link to="/login">
-                    <button type="button" class="btn btn-success">
+                    <button type="button" class="btn btn-login ">
                         Login
                     </button>
                 </router-link>
@@ -111,6 +111,19 @@ function logout() {
     padding: 0 50px 0 50px;
 }
 
+.btn-login,.btn-logout {
+    background: #fafafa;
+    color: #000000;
+    font-weight: bold;
+}
+
+.btn-login:focus {
+    background:  rgb(180, 8, 8);
+    color: #ffffff;
+
+}
+
+
 .btn-catogory{
     width: 160px;
     background-color: #fff;
@@ -125,7 +138,11 @@ function logout() {
     float: right;
     padding: 10px;
     font-size: 20px;
-    color: rgb(238, 16, 16)
+    color: rgb(255, 255, 255)
+}
+
+.user-name {
+    padding-right: 20px;
 }
 
 .usericon {
