@@ -1,6 +1,13 @@
 <template>
     <div class="container">
         <div class="row">
+
+            <div class="col-md-12 text-left">
+                <button class="btn btn-return" @click="goBack">
+                    <i class="fa-solid fa-arrow-left"></i> <!-- Icon quay lại -->
+                </button>
+            </div>
+
             <div class="col-md-4" align="center">
                 <div class="book-image text-right">
                     <img :src="server + selectedBook.image" alt="" class="book-image">
@@ -25,8 +32,6 @@ import { defineProps } from 'vue';
 import bookTypeService from '../services/bookType.service';
 import { ref } from 'vue';
 import {  useQuery } from '@tanstack/vue-query';
-
-
 // let type = ref('');
 
 const props = defineProps({
@@ -37,20 +42,16 @@ const props = defineProps({
 });
 
 const book = ref({ ...props.selectedBook });
-// let type = ref({ ...props.type });
 const server = import.meta.env.VITE_SERVER;
-
 
 const { data } = useQuery({
     queryKey: ['types', book.value.id],
     queryFn: () =>  bookTypeService.getTypeById(book.value.id)
 });
 
-// props.type = data;  
-
-
-
-
+function goBack() {
+    window.history.back();
+}
 </script>
 
 <style>
@@ -62,11 +63,22 @@ const { data } = useQuery({
     height: 500px;
 }
 
+.btn-return {
+    background: rgb(180, 8, 8);
+    color: #fff;
+    margin: 10px 60px;
+}
+
+.btn-return:hover {
+    background: rgb(255, 255, 255);
+    color: rgb(180, 8, 8);
+}
 .container {
     justify-content: center;
     margin-top: 50px;
     background-color: rgb(242, 184, 184);
     border-radius: 5px;
     padding: 5px;
+    padding-bottom: 50px;
 }
 </style>

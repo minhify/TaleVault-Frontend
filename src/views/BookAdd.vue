@@ -30,7 +30,6 @@ const uploadMutation = useMutation({
     }
 });
 
-// mutation for add book
 const addBookMutation = useMutation({
     mutationFn: makeBookService.addBook,
     onSuccess: () => {
@@ -41,9 +40,6 @@ const addBookMutation = useMutation({
         console.log(error);
     }
 });
-
-
-//// create new book
 
 function create(props) {
     console.log(props.name);
@@ -68,9 +64,8 @@ function create(props) {
         console.log(error)
     }
 }
-
-
 </script>
+
 <template>
     <div class="addFunction">
         <AppHeader v-model:searchText="searchText" />
@@ -79,16 +74,9 @@ function create(props) {
         <div class="container mt-3 w-75">
             <BookForm :book="[]" :types="data" @submit:book='create' />
             <br>
-            <!-- {{ message }} -->
-
         </div>
-
-
-        <!-- {{ data }} -->
     </div>
 </template>
-
-
 
 <style scoped>
 .container {

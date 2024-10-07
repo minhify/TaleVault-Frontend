@@ -37,7 +37,6 @@ const { isLoading, isError, data, error, refetch } = useQuery({
    },
 });
 
-
 // delete all funtuon 
 const deleteAllMutation = useMutation({
    mutationFn: makeBookService.deleteAllBooks,
@@ -51,14 +50,11 @@ const deleteAllMutation = useMutation({
 
 })
 
-
-
 function deleteAllBooks() {
    if(confirm('Are you sure you want to delete all books?')) {
       deleteAllMutation.mutate()
    }
 }
-
 
 const  goToAddForm = () => {
    $router.push({ name: 'bookadd' });
@@ -69,16 +65,12 @@ const { isLoading: isLoadingSession, isError: isErrorSession, data:sessiondata  
    queryFn: userService.getSession
 });
 
-
-
 // console.log(sessiondata);
 watch(props, () => (
    refetch()
 ))
 
-
 </script>
-
 <template>
    <div class="bookcollection">
       <!-- header -->
@@ -92,15 +84,12 @@ watch(props, () => (
       <span v-else-if="isErrorSession">{{ error.message }}</span>
       <div class="add" v-else-if="sessiondata.user && sessiondata.user.role_id === 0">
          <div class="m-3 gap-3 d-flex justify-content-end align-items-center">
-            <button class="btn btn-primary" @click="goToAddForm">Add new book</button>
-            <button class="btn btn-danger" @click="deleteAllBooks">Delete all</button>
+            <button class="btn btn-add btn-primary" @click="goToAddForm">Add new book</button>
+            <button class="btn btn-del " @click="deleteAllBooks">Delete all</button>
          </div>
       </div> 
       <div v-else></div> 
       <!-- Delete all -->
-
-      
-
       <!-- {{ sessiondata.user }} -->
       <!-- book list -->
       <span v-if="isLoading">Loading...</span>
@@ -113,7 +102,6 @@ watch(props, () => (
    </div>
    </div>
 </template>
- 
 <script>
 export default {
    name: 'BookCollection'
@@ -124,4 +112,13 @@ export default {
 .bookcollection {
    background-color: rgb(255, 255, 255);
 }
+
+.btn-add, .btn-del {
+   padding-bottom: 10px;
+}
+.btn-del {
+   background-color: rgb(180, 8, 8);
+   color: #ffffff;
+}
+
 </style>

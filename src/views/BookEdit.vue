@@ -73,14 +73,12 @@ const uploadMutation = useMutation({
     }
 });
 
-
 const deleteMutation = useMutation({
     mutationFn: makeBookService.deleteBook,
     onSuccess: () => {
         queryClient.invalidateQueries('books');
         alert("Delete book successfully");
         $router.push({ name: 'bookcollection' });
-        
     },
     onError: (error) => {
         console.log(error);
@@ -89,25 +87,19 @@ const deleteMutation = useMutation({
 })
 
 function updateBook(props){
-    // console.log(props);
     uploadMutation.mutate(props.file);
     updateMutation.mutate(props);
-    
-    // console.log(book.id);
-    // console.log("helo update");
 }
 
 function deleteBook(id){
     deleteMutation.mutate(id);
 }
 const searchText = ref('');	
-
 </script>
 
 <template>
     <div class="editFunction">
         <AppHeader v-model:searchText="searchText" />
-        
         <!--  -->
         <div class="container mt-3 w-75">
             <span v-if="isLoading">Loading...</span>
@@ -117,13 +109,8 @@ const searchText = ref('');
                 {{ message }}
             </div>
         </div>
-        
-
-
-      
     </div>
 </template>
-
 
 <style scoped>
 .container {

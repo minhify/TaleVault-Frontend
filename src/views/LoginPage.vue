@@ -39,7 +39,6 @@ async function login(username, password) {
 
 <style scoped>
 .LoginPageContainer {
-   background-color: rgb(77, 74, 74);
    height: 70vh; 
    padding: 10px;
    /* display: flex; */
